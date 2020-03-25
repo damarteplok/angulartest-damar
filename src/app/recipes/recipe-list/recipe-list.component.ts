@@ -89,7 +89,7 @@ export class RecipeListComponent implements OnInit {
   }
 
   onAdd(val: {id: number, name: string, description: string, imagePath: Array<object>, likes: number}): void {
-    this.recipes.push(new RecipeModel(val.id, val.name, val.description, val.imagePath, val.likes));
+    this.recipes.unshift(new RecipeModel(val.id, val.name, val.description, val.imagePath, val.likes));
   }
 
   onEmit(id: number): void {
