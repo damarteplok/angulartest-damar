@@ -1,0 +1,11 @@
+<form action="" #myForm="ngForm">
+  <div>
+    Username
+    <input type="text" [formControl]="username">
+  </div>
+  <div>
+    Email
+    <input type="text" [formControl]="email">
+  </div>
+  <button type="submit" class="btn btn-primary" [disabled]="myForm.invalid">Submit</button>
+</form>

@@ -1,0 +1,17 @@
+<div class="row">
+  <div class="col-xs-10">
+    <app-shoping-edit
+      (added)="onAdd($event)"
+    ></app-shoping-edit>
+    <hr>
+    <ul class="list-group">
+      <a
+        class="list-group-item"
+        *ngFor="let item of ingerdients"
+      >
+        <button class="badge" (click)="onRemove(item.id)">&times;</button>
+        {{item.name}} ( {{item.amount}} )
+      </a>
+    </ul>
+  </div>
+</div>

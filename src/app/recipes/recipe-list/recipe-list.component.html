@@ -1,0 +1,48 @@
+<div class="row">
+  <div class="col-xs-12">
+    <a href="#" class="btn btn-success" data-toggle="modal" data-target="#basicModal">New recipe</a>
+  </div>
+</div>
+<hr>
+<div class="row">
+  <div class="col-xs-12">
+    <a
+      (click)="onEmit(item.id)"
+      href="#"
+      class="list-group-item clearfix"
+      *ngFor="let item of recipes | slice:next:endnext; let i=index">
+      <div class="pull-left">
+        <h4 class="list-group-item-heading">{{item.name}}</h4>
+        <p class="list-group-item-text">{{item.description}}</p>
+        <div style="margin-top: 1rem;">
+          <button type="button" class="btn btn-default btn-xs" (click)="onMinLikes(item.id)">
+            <span class="glyphicon glyphicon-arrow-down" aria-hidden="true"></span>
+          </button>
+          <button type="button" class="btn btn-default btn-xs" (click)="onPlusLikes(item.id)">
+            <span class="glyphicon glyphicon-arrow-up" aria-hidden="true"></span>
+          </button>
+          &nbsp; {{item.likes}}
+        </div>
+      </div>
+      <span class="pull-right">
+        <img
+          [src]="item.imagePath[0].name"
+          alt="{{item.name}}"
+          class="img-responsive"
+          style="max-height: 50px;">
+      </span>
+    </a>
+    <app-recipe-item></app-recipe-item>
+  </div>
+  <div class="col-xs-12" style="margin-top: .5rem;">
+    <button type="button" class="btn btn-default pull-right" (click)="onNext()">Next</button>
+    <button style="margin-right: .5rem;" type="button" class="btn btn-default pull-right" (click)="onBack()">Back</button>
+  </div>
+</div>
+
+<div>
+  <app-recipe-new
+    (added)="onAdd($event)"
+    [total]="totImg"
+  ></app-recipe-new>
+</div>

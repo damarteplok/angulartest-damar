@@ -1,0 +1,24 @@
+<nav class="navbar navbar-default">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a href="#" class="navbar-brand">Recipe Book</a>
+    </div>
+
+    <div class="collapse navbar-collapse">
+      <ul class="nav navbar-nav">
+        <li><a href="#" (click)="onChange('recipe-container')">Recipes</a></li>
+        <li><a href="#" (click)="onChange('shoping-container')">Shoping List</a></li>
+        <li><a href="#" (click)="onChange('skill-container')">Add Skills</a></li>
+      </ul>
+      <ul class="nav navbar-nav navbar-right">
+        <li class="dropdown">
+          <a href="#" class="dropdown-toggle" role="button" data-toggle="dropdown">Manage <span class="caret"></span></a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Setting</a></li>
+            <li><a class="dropdown-item" href="#">Logout</a></li>
+          </ul>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
