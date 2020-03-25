@@ -15,6 +15,10 @@ import { HilihPipe } from './pipes/hilih.pipe';
 import { PostContainerComponent } from './post-container/post-container.component';
 import { PostSingleComponent } from './post-single/post-single.component';
 import { FeedbackComponent } from './feedback/feedback.component';
+import { SkillsComponent } from './skills/skills.component';
+import { ProfileComponent } from './skills/profile/profile.component';
+import { SkillComponent } from './skills/skill/skill.component';
+import { SummaryComponent } from './skills/summary/summary.component';
 
 @NgModule({
   declarations: [
@@ -30,7 +34,11 @@ import { FeedbackComponent } from './feedback/feedback.component';
     HilihPipe,
     PostContainerComponent,
     PostSingleComponent,
-    FeedbackComponent
+    FeedbackComponent,
+    SkillsComponent,
+    ProfileComponent,
+    SkillComponent,
+    SummaryComponent
   ],
   imports: [
     BrowserModule,

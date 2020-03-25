@@ -1,0 +1,41 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-10">
+      <div class="progress">
+        <div class="progress-bar"
+             role="progressbar"
+             attr.aria-valuenow="{{percentNow}}"
+             aria-valuemin="0" aria-valuemax="100"
+             [ngStyle]="{'width': percentNow+'%'}"
+        >
+          {{percentNow}}%
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="row" *ngIf="percentNow < 50">
+    <div class="col-xs-10">
+      <div class="page-header">
+        <h1>Add <small>Profile</small></h1>
+      </div>
+      <app-profile
+      (notifyParent1)="onNotifyParent1($event)"
+      ></app-profile>
+    </div>
+  </div>
+
+  <div class="row" *ngIf="percentNow >= 50">
+    <div class="col-xs-10">
+      <div class="page-header">
+        <h1>List <small>Summary</small></h1>
+      </div>
+      <p>{{profile.name}}</p>
+      <p>{{profile.gender}}</p>
+      <p>{{profile.age}}</p>
+      <p>{{profile.country}}</p>
+      <p>{{profile.username}}</p>
+      <p>{{profile.email}}</p>
+    </div>
+  </div>
+</div>
+
